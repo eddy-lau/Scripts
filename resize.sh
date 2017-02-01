@@ -1,0 +1,8 @@
+#!/bin/bash
+FILE=$1
+WIDTH=$2
+HEIGHT=$2
+BASEFILENAME=$(basename "$FILE")
+EXT="${FILE##*.}"
+BASEFILENAME="${BASEFILENAME%.*}"
+gm convert -resize $WIDTH'x'$HEIGHT "$FILE" "$BASEFILENAME-$WIDTH.$EXT"
